@@ -9,13 +9,13 @@ inline static char hex(uint8_t value) { return hex_table[value]; }
 
 
 void
-hexdump(char *restrict dest, unsigned char *restrict in, size_t n) {
+hexdump(char *restrict out, unsigned char *restrict in, size_t n) {
     size_t j = 0;
     for (size_t i = 0; i < n; i++) {
         uint8_t a = in[i];
-        dest[j++] = '\\';
-        dest[j++] = 'x';
-        dest[j++] = hex(a >> 4);
-        dest[j++] = hex(a & 0b1111);
+        out[j++] = '\\';
+        out[j++] = 'x';
+        out[j++] = hex(a >> 4);
+        out[j++] = hex(a & 0b1111);
     }
 }
