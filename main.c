@@ -3,7 +3,7 @@
 unsigned time(char *out, unsigned char *in, size_t n) {
     unsigned t0, t1;
     asm volatile("lfence; rdtsc" : "=a"(t0) : : "edx");
-    encodeHex(out, in, n);
+    hexdump(out, in, n);
     asm volatile("lfence; rdtsc" : "=a"(t1) : : "edx");
     return t1 - t0;
 }
