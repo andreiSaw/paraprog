@@ -3,4 +3,4 @@ project(paraprog C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(paraprog src/main.c)
+add_executable(paraprog main.c)
